@@ -58,7 +58,7 @@ class csv {
                 $columnNames = $row;
                 $isHeaderRecord = false;
             } else {
-                $records = recordFactory::createRecord($columnNames, $row);
+                $records[] = recordFactory::createRecord($columnNames, $row);
             }
         }
 
