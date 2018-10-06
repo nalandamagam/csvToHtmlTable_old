@@ -6,8 +6,14 @@
  * Time: 11:42 PM
  */
 
-class main {
+main::start("csvTestFile.csv");
 
+class main {
+    public static function start($csvFileName) {
+        $records = csv::getRecordsFromCSV($csvFileName);
+        $table = html::generateHTMLTable($records);
+        echo $table;
+    }
 }
 
 class html {
