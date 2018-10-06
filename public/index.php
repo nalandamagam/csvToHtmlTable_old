@@ -19,11 +19,15 @@ class csv {
 }
 
 class recordFactory {
+    public static function createRecord(Array $columnNames = null, $cellValues = null) {
+        $record = new record($columnNames, $cellValues);
+        return $record;
+    }
 
 }
 
 class record {
-    public function __construct(Array $columnNames = null, $cellValues = null ) {
+    public function __construct(Array $columnNames = null, $cellValues = null) {
         $record = array_combine($columnNames, $cellValues);
 
         foreach ($record as $key => $value){
